@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 const initialState = {
   user: { name: null, email: null },
@@ -44,7 +44,7 @@ const authSlice = createSlice({
     [refreshUser.rejected](state) {
       state.isRefreshing = false;
       state.isLoggedIn = false;
-      toast('Something went wrong! Please try to reload the page');
+      toast.error('Something went wrong! Please try to reload the page');
     },
   },
 });

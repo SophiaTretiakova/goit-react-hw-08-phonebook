@@ -3,6 +3,7 @@ import { PhoneBook } from './PhoneBookForm/PhoneBookForm';
 import { ContactsList } from './Contacts/ContactsList';
 import { Filter } from './Filter/Filter';
 import { GlobalStyles } from './GlobalStyles.styled';
+// import { ToastContainer } from 'react-toastify';
 
 export const App = () => {
   return (
@@ -14,7 +15,7 @@ export const App = () => {
         <Filter />
         <ContactsList />
       </Section>
-
+      {/* <ToastContainer /> */}
       <GlobalStyles />
     </>
   );
