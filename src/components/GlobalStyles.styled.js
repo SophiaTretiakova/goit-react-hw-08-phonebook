@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 body{  
     padding: 20px 50px;
-  background: linear-gradient(0.25turn, #ec7fff, #ebf8e1, #f69d3c);
+  /* background: linear-gradient(0.25turn, #ec7fff, #ebf8e1, #f69d3c); */
   background-repeat: no-repeat;
   font-size: larger;
 }

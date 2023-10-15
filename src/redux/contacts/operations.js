@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 // GET @ /contacts
 export const getContacts = createAsyncThunk(
@@ -10,7 +10,7 @@ export const getContacts = createAsyncThunk(
       const res = await axios.get('/contacts');
       return res.data;
     } catch (error) {
-      toast.error('Showing contact failed. try to authorize');
+      toast('Showing contacts failed. Try to authorize');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -24,7 +24,7 @@ export const addContact = createAsyncThunk(
       const response = await axios.post('/contacts', contact);
       return response.data;
     } catch (e) {
-      toast.error('Adding contact failed');
+      toast('Adding contact failed');
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -38,7 +38,7 @@ export const deleteContact = createAsyncThunk(
       const response = await axios.delete(`/contacts/${contactId}`);
       return response.data;
     } catch (e) {
-      toast.error('Deleting contact failed');
+      toast('Deleting contact failed');
       return thunkAPI.rejectWithValue(e.message);
     }
   }

@@ -20,7 +20,7 @@ const AddSchema = Yup.object().shape({
     ),
 });
 
-export const PhoneBook = () => {
+export const PhoneBookForm = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
