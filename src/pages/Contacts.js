@@ -1,6 +1,5 @@
 import { ContactsList } from 'components/Contacts/ContactsList';
 import { PhoneBookForm } from 'components/PhoneBookForm/PhoneBookForm';
-// import { Filter } from 'components/Filter/Filter';
 import Filter from 'components/Filter/Filter';
 import React from 'react';
 import { useSelector } from 'react-redux';

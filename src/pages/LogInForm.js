@@ -4,6 +4,7 @@ import { logIn } from 'redux/auth/operations';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from '@mui/material';
+import { Button, StyledForm } from './LogIn.styled';
 
 const userSchema = Yup.object({
   email: Yup.string()
@@ -23,7 +24,7 @@ const LogInForm = () => {
 
   const dispatch = useDispatch();
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <StyledForm onSubmit={formik.handleSubmit}>
       <label>
         <TextField
           autoComplete="on"
@@ -50,8 +51,8 @@ const LogInForm = () => {
           helperText={formik.touched.password && formik.errors.password}
         />
       </label>
-      <button type="submit">Log In</button>
-    </form>
+      <Button type="submit">Log In</Button>
+    </StyledForm>
   );
 };
 

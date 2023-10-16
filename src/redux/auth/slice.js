@@ -50,7 +50,6 @@ const authSlice = createSlice({
     [refreshUser.rejected](state) {
       state.isRefreshing = false;
       state.isLoggedIn = false;
-      toast('Something went wrong! Please try to reload the page');
     },
   },
 });

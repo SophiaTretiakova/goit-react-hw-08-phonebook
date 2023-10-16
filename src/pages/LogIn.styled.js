@@ -7,10 +7,6 @@ export const StyledForm = styled.form`
   gap: 10px;
 `;
 
-export const Label = styled.label`
-  font-weight: bold;
-`;
-
 export const Button = styled.button`
   width: 222px;
 `;

@@ -3,7 +3,6 @@ import { ContactsListItem } from './ContactsListItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
 import { getContacts } from 'redux/contacts/operations';
-// import { ToastContainer } from 'react-toastify';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();

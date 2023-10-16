@@ -13,11 +13,22 @@ export const StyledHeader = styled.header`
   line-height: 1.5;
   letter-spacing: 0.02em;
 
-  color: violet;
+  color: rgb(34, 0, 186);
 `;
 
 export const Navigation = styled.nav`
   display: flex;
   gap: 30px;
   justify-content: flex-end;
+`;
+
+export const HomeNav = styled.div`
+  display: flex;
+  gap: 30px;
+`;
+
+export const WelcomingDiv = styled.div`
+  display: flex;
+  gap: 30px;
+  align-items: center;
 `;

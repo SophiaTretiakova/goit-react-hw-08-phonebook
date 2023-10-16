@@ -1,10 +1,11 @@
-import { Formik, Field, ErrorMessage } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { StyledForm, Label } from './PhoneBookForm.styled';
+import { StyledForm, Label, Button } from './PhoneBookForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { toast } from 'react-toastify';
+import { TextField } from '@mui/material';
 
 const AddSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,34 +38,45 @@ export const PhoneBookForm = () => {
     dispatch(addContact({ ...newContact }));
   };
 
+  const formik = useFormik({
+    initialValues: { name: '', number: '' },
+    validationSchema: AddSchema,
+    onSubmit: contact => {
+      const newContact = {
+        ...contact,
+      };
+      addNewContact(newContact);
+    },
+  });
   return (
-    <div>
-      <Formik
-        initialValues={{ name: '', number: '' }}
-        validationSchema={AddSchema}
-        onSubmit={contact => {
-          const newContact = {
-            ...contact,
-          };
-          addNewContact(newContact);
-        }}
-      >
-        {({ handleSubmit }) => (
-          <StyledForm onSubmit={handleSubmit}>
-            <Label>
-              <p>Name</p>
-              <Field name="name" type="text" />
-              <ErrorMessage name="name" component="div" />
-            </Label>
-            <Label>
-              <p>Number</p>
-              <Field name="number" type="tel" />
-              <ErrorMessage name="number" component="div" />
-            </Label>
-            <button type="submit">Add contact</button>
-          </StyledForm>
-        )}
-      </Formik>
-    </div>
+    <StyledForm onSubmit={formik.handleSubmit}>
+      <Label>
+        <TextField
+          id="name"
+          value={formik.values.name}
+          label="Name"
+          name="name"
+          type="text"
+          onChange={formik.handleChange}
+          error={formik.touched.name && Boolean(formik.errors.name)}
+          helperText={formik.touched.name && formik.errors.name}
+        />
+      </Label>
+      <Label>
+        <TextField
+          id="number"
+          value={formik.values.number}
+          label="Number"
+          name="number"
+          type="tel"
+          onChange={formik.handleChange}
+          error={formik.touched.number && Boolean(formik.errors.number)}
+          helperText={formik.touched.number && formik.errors.number}
+        />
+      </Label>
+      <Button variant="outlined" type="submit">
+        Add contact
+      </Button>
+    </StyledForm>
   );
 };

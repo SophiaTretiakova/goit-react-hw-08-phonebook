@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 body{  
     padding: 20px 50px;
-  /* background: linear-gradient(0.25turn, #ec7fff, #ebf8e1, #f69d3c); */
   background-repeat: no-repeat;
   font-size: larger;
 }
@@ -20,12 +19,16 @@ button{
   position: relative;
   text-decoration: none;
   color: #333;
-  border: 3px solid #333333;
+  border: 3px solid rgba(34, 0, 186, 0.6);
   padding: 10px 15px;
   margin: 5px 0px;
+  min-width: 75px;
+  height: 41px;
 }
 button:hover{
     background-color:  #ebf8e1;
+    color: rgba(34, 0, 186, 0.6);
+    font-weight: 700;
 }
 
 button:active {
@@ -45,6 +48,5 @@ a{
 #root{
     display: flex;
     flex-direction: column;
-     /* background: linear-gradient(0.25turn, #ec7fff, #ebf8e1, #f69d3c); */
 }
 `;
