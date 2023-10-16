@@ -23,14 +23,10 @@ const LogInForm = () => {
 
   const dispatch = useDispatch();
   return (
-    <form
-      // className="flex flex-col w-[400px] gap-4"
-      onSubmit={formik.handleSubmit}
-    >
-      <label className="flex flex-col gap-1">
+    <form onSubmit={formik.handleSubmit}>
+      <label>
         <TextField
           autoComplete="on"
-          // className="border-slate-400 border-2 rounded-md p-2"
           type="email"
           name="email"
           label="Email"
@@ -41,10 +37,9 @@ const LogInForm = () => {
           helperText={formik.touched.email && formik.errors.email}
         />
       </label>
-      <label className="flex flex-col gap-1">
+      <label>
         <TextField
           autoComplete="on"
-          // className="border-slate-400 border-2 rounded-md p-2"
           type="password"
           name="password"
           label="Password"
@@ -55,12 +50,7 @@ const LogInForm = () => {
           helperText={formik.touched.password && formik.errors.password}
         />
       </label>
-      <button
-        // className="w-[100px] bg-slate-400 rounded-lg p-2 text-white hover:bg-slate-600"
-        type="submit"
-      >
-        Log In
-      </button>
+      <button type="submit">Log In</button>
     </form>
   );
 };
