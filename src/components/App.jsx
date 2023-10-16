@@ -1,25 +1,4 @@
-// import { Section } from './Section/Section';
-// import { PhoneBookForm } from './PhoneBookForm/PhoneBookForm';
-// import { ContactsList } from './Contacts/ContactsList';
-// import { Filter } from './Filter/Filter';
 import { GlobalStyles } from './GlobalStyles.styled';
-// // import { ToastContainer } from 'react-toastify';
-
-// export const App = () => {
-//   return (
-//     <>
-//       <Section title="Phone book">
-//         <PhoneBookForm />
-//       </Section>
-//       <Section title="Contacts">
-//         <Filter />
-//         <ContactsList />
-//       </Section>
-//       {/* <ToastContainer /> */}
-//       <GlobalStyles />
-//     </>
-//   );
-// };
 import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';

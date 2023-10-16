@@ -24,35 +24,38 @@ const LogInForm = () => {
 
   const dispatch = useDispatch();
   return (
-    <StyledForm onSubmit={formik.handleSubmit}>
-      <label>
-        <TextField
-          autoComplete="on"
-          type="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-      </label>
-      <label>
-        <TextField
-          autoComplete="on"
-          type="password"
-          name="password"
-          label="Password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.password && Boolean(formik.errors.password)}
-          helperText={formik.touched.password && formik.errors.password}
-        />
-      </label>
-      <Button type="submit">Log In</Button>
-    </StyledForm>
+    <>
+      <h1>Log in your account</h1>
+      <StyledForm onSubmit={formik.handleSubmit}>
+        <label>
+          <TextField
+            autoComplete="on"
+            type="email"
+            name="email"
+            label="Email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+        </label>
+        <label>
+          <TextField
+            autoComplete="on"
+            type="password"
+            name="password"
+            label="Password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+          />
+        </label>
+        <Button type="submit">Log In</Button>
+      </StyledForm>
+    </>
   );
 };
 

@@ -45,6 +45,17 @@ a{
   text-decoration: none;
 }
 
+h1{  
+  text-decoration: none;
+  font-weight: 700;
+  color: #2e2f42;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
+
+  color: rgb(34, 0, 186);}
+
 #root{
     display: flex;
     flex-direction: column;

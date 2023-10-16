@@ -9,6 +9,7 @@ const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);
   return (
     <div>
+      <h1>Contacts</h1>
       <PhoneBookForm />
       <Filter />
       {isLoading && <p>Refreshing data...</p>}

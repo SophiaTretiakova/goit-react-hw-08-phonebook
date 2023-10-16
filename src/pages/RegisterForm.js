@@ -26,49 +26,51 @@ const RegisterForm = () => {
     validationSchema: userSchema,
     onSubmit: values => {
       dispatch(register(values));
-      console.log(values);
     },
   });
   return (
-    <StyledForm onSubmit={formik.handleSubmit}>
-      <Label>
-        <TextField
-          id="name"
-          value={formik.values.name}
-          label="Name"
-          name="name"
-          type="text"
-          onChange={formik.handleChange}
-          error={formik.touched.name && Boolean(formik.errors.name)}
-          helperText={formik.touched.name && formik.errors.name}
-        />
-      </Label>
-      <Label>
-        <TextField
-          id="email"
-          value={formik.values.email}
-          label="E-mail"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-      </Label>
-      <Label>
-        <TextField
-          autoComplete="on"
-          type="password"
-          name="password"
-          label="Password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          error={formik.touched.password && Boolean(formik.errors.password)}
-          helperText={formik.touched.password && formik.errors.password}
-        />
-      </Label>
-      <Button type="submit">Sign Up</Button>
-    </StyledForm>
+    <>
+      <h1>Register your account</h1>
+      <StyledForm onSubmit={formik.handleSubmit}>
+        <Label>
+          <TextField
+            id="name"
+            value={formik.values.name}
+            label="Name"
+            name="name"
+            type="text"
+            onChange={formik.handleChange}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
+        </Label>
+        <Label>
+          <TextField
+            id="email"
+            value={formik.values.email}
+            label="E-mail"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+        </Label>
+        <Label>
+          <TextField
+            autoComplete="on"
+            type="password"
+            name="password"
+            label="Password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+          />
+        </Label>
+        <Button type="submit">Sign Up</Button>
+      </StyledForm>
+    </>
   );
 };
 
