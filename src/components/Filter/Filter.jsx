@@ -19,6 +19,7 @@ const Filter = () => {
         onChange={evt => {
           handleFilterChange(evt.target.value);
         }}
+        type="text"
         placeholder="Find contact by name"
       />
     </div>
