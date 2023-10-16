@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactsListItem = ({ contact }) => {
-  const { id, name, phone } = contact;
+  const { id, name, number } = contact;
 
   const dispatch = useDispatch();
   const handleDeleteContact = contactId => dispatch(deleteContact(contactId));
@@ -10,7 +10,7 @@ export const ContactsListItem = ({ contact }) => {
   return (
     <li>
       <p>
-        {name}: {phone}
+        {name}: {number}
       </p>
       <button onClick={() => handleDeleteContact(id)}>Delete</button>
     </li>
