@@ -3,10 +3,6 @@ import { setFilter } from 'redux/filter/slice';
 
 const Filter = () => {
   const dispatch = useDispatch();
-  // const handleFilterChange = event => {
-  //   const value = event.target.value;
-  //   dispatch(setFilter(value));
-  // };
   const handleFilterChange = value => {
     dispatch(setFilter(value));
   };

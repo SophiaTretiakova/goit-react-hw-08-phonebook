@@ -38,6 +38,10 @@ button:active:after{
   left: 2px
 }
 
+a{
+  text-decoration: none;
+}
+
 #root{
     display: flex;
     flex-direction: column;

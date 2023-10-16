@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logOut } from 'redux/auth/operations';
 import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
+import { Navigation, StyledHeader } from './Header.styled';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -11,7 +12,7 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   return (
-    <header>
+    <StyledHeader>
       <div>
         <Link to="/">Home</Link>
         {isLoggedIn && <Link to="/contacts">Contacts</Link>}
@@ -31,11 +32,11 @@ export const Header = () => {
           </Button>
         </div>
       ) : (
-        <div>
+        <Navigation>
           <Link to="/register">Sign Up</Link>
           <Link to="/login">Log In</Link>
-        </div>
+        </Navigation>
       )}
-    </header>
+    </StyledHeader>
   );
 };

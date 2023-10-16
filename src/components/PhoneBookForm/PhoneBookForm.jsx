@@ -4,6 +4,7 @@ import { StyledForm, Label } from './PhoneBookForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { toast } from 'react-toastify';
 
 const AddSchema = Yup.object().shape({
   name: Yup.string()
@@ -30,7 +31,7 @@ export const PhoneBookForm = () => {
     }).length;
 
     if (isInContacts) {
-      alert(`${newContact.name} is already in your contacts`);
+      toast(`${newContact.name} is already in your contacts`);
       return;
     }
     dispatch(addContact({ ...newContact }));
